@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master - Easy Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Home Screen -->
+        <div id="homeScreen" class="screen active">
+            <div class="content">
+                <h1>🎯 Quiz Master</h1>
+                <p class="subtitle">Test your knowledge with fun quizzes!</p>
+                <div class="quiz-selection">
+                    <button class="quiz-btn" onclick="startQuiz('general')">General Knowledge</button>
+                    <button class="quiz-btn" onclick="startQuiz('science')">Science</button>
+                    <button class="quiz-btn" onclick="startQuiz('history')">History</button>
+                    <button class="quiz-btn" onclick="startQuiz('geography')">Geography</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="screen">
+            <div class="quiz-container">
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <div class="question-counter">
+                    <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span>
+                </div>
+                <h2 id="questionText" class="question"></h2>
+                <div id="answersContainer" class="answers"></div>
+                <button id="nextBtn" class="btn-next" onclick="nextQuestion()" style="display:none;">Next Question</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="screen">
+            <div class="results-container">
+                <h1>🎉 Quiz Complete!</h1>
+                <div class="score-circle">
+                    <span id="scoreText" class="score-number">0%</span>
+                </div>
+                <p id="scoreMessage" class="score-message"></p>
+                <div class="results-details">
+                    <p>You got <span id="correctCount">0</span> out of <span id="totalCount">10</span> correct</p>
+                </div>
+                <button class="btn-primary" onclick="goHome()">Try Another Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
